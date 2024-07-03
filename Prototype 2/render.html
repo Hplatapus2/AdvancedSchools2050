@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<meta name="generator" content="Three.js Editor">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="stylesheet" href="./style.css">
 		<style>
 			body {
 				font-family: sans-serif;
@@ -16,10 +15,9 @@
 			canvas {
 				display: block;
 			}
-			
 		</style>
 	</head>
-	<body ontouchstart="">
+	<body ontouchstart="" style="background-color: white;">
 		<script type="importmap">
 			{
 				"imports": {
@@ -27,9 +25,6 @@
 				}
 			}
 		</script>
-		<div class="half" >
-			<img src="Prototype 2\2024 premiers coding challange.png">
-		</div>
 		<script type="module">
 
 			import * as THREE from 'three';
@@ -37,6 +32,7 @@
 			import { OrbitControls } from './js/OrbitControls.js';
 
 			window.THREE = THREE; // Used by APP Scripts.
+			window.OrbitControls = OrbitControls;
 			//var controls = new OrbitControls( camera, renderer.domElement );
 
 			var loader = new THREE.FileLoader();
@@ -58,5 +54,8 @@
 			} );
 
 		</script>
+		<!--<div>
+			<img src="./2024 premiers coding challange.png" alt="vmakdwnvakj">
+		</div>-->
 	</body>
 </html>

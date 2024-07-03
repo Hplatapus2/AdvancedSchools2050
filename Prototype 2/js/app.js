@@ -1,4 +1,4 @@
-import { OrbitControls } from './OrbitControls.js';
+//import { OrbitControls } from './OrbitControls.js';
 var APP = {
 
 	Player: function () {
@@ -19,7 +19,7 @@ var APP = {
 
 		this.width = 500;
 		this.height = 500;
-		// controls.update();
+
 		this.load = function ( json ) {
 
 			var project = json.project;
@@ -31,6 +31,7 @@ var APP = {
 
 			this.setScene( loader.parse( json.scene ) );
 			this.setCamera( loader.parse( json.camera ) );
+			var controls = new OrbitControls( camera, renderer.domElement );
 
 			events = {
 				init: [],
