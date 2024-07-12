@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>prototype 2</title>
+		<meta charset="utf-8">
+		<meta name="generator" content="Three.js Editor">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="stylesheet" href="budtpos.css">
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 11px;
+				background-color: #000;
+				margin: 0px;
+			}
+			canvas {
+				display: block;
+			}
+			.right {
+				position: absolute;
+				right: 0px;
+			}
+		/*	.container {
+				position: relative;
+  }*/
+  .box {
+	background-color: #555;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .box:hover {
+	background-color: orange;
+  }
+  
+  .container .btn  {
+    position: absolute;
+	transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+  }
+  #ButA{
+	top: 38.00539083557951%;
+    left: 53.76344086021505%;
+  }
+  #MenuButA{
+	top: 38.00539083557951%;
+    left: 53.76344086021505%;
+  }
+  #ButB {
+	left: 53.76344086021505%;
+	top: 76.28032345013477%;
+  }
+  #MenuButB {
+	left: 53.76344086021505%;
+	top: 76.28032345013477%;
+  }
+  #ButC {
+	left: 69.62365591397849%;
+	top: 76.01078167115903%;
+  }
+  #MenuButC {
+	left: 69.62365591397849%;
+	top: 76.01078167115903%;
+  }
+  #ButH {
+	left: 69.62365591397849%;
+	top: 36.65768194070081%;
+  }
+  #MenuButH {
+	left: 69.62365591397849%;
+	top: 36.65768194070081%;
+  }
+  #ButD {
+	left: 75.33602150537634%;
+	top: 6.334231805929919%;
+  }
+  #MenuButD {
+	left: 75.33602150537634%;
+	top: 6.334231805929919%;
+  }
+  #ButAD {
+	left: 88.5752688172043%;
+	top: 85.71428571428571%;
+  }
+  #MenuButAD {
+	left: 88.5752688172043%;
+	top: 85.71428571428571%;
+  }
+  #ButW {
+	left: 74.73118279569892%;
+	top: 97.30458221024259%;
+  }
+  #MenuButW {
+	left: 74.73118279569892%;
+	top: 97.30458221024259%;
+  }
+		</style>
+		
+	</head>
+	<body ontouchstart="" style="background-color: white;">
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "./js/three.module.js"
+				}
+			}
+		</script>
+		<script type="module">
+
+			import * as THREE from 'three';
+			import { APP } from './js/app.js';
+			import { OrbitControls } from './js/OrbitControls.js';
+
+			window.THREE = THREE; // Used by APP Scripts.
+			window.OrbitControls = OrbitControls;
+			//var controls = new OrbitControls( camera, renderer.domElement );
+
+			var loader = new THREE.FileLoader();
+			var A_Solar = "Solar_a.json"
+			loader.load( 'noapp.json', function ( text ) {
+				loader.load( 'Solar_a.json', function ( Solar_a ) {
+					text.add(Solar_a)
+				})
+				var width = window.innerWidth / 2
+				var player = new APP.Player();
+				player.load( JSON.parse( text ) );
+				player.setSize( width, window.innerHeight );
+				player.play();
+
+				document.body.appendChild( player.dom );
+
+				window.addEventListener( 'resize', function () {
+
+					player.setSize( width, window.innerHeight );
+
+				} );
+
+			} );
+		</script>
+		<script>
+				function A() {
+				var A = document.getElementById("MenuButA");
+  				if (A.style.display === "none") {
+    			A.style.display = "block";
+  				} else {
+    			A.style.display = "none";
+  				}
+			}
+			function B() {
+				var B = document.getElementById("MenuButB");
+  				if (B.style.display === "none") {
+    			B.style.display = "block";
+  				} else {
+    			B.style.display = "none";
+  				}
+			}
+			function C() {
+				var C = document.getElementById("MenuButC");
+  				if (C.style.display === "none") {
+    			C.style.display = "block";
+  				} else {
+    			C.style.display = "none";
+  				}
+			}
+			function D() {
+				var D = document.getElementById("MenuButD");
+  				if (D.style.display === "none") {
+    			D.style.display = "block";
+  				} else {
+    			D.style.display = "none";
+  				}
+			}
+			function H() {
+				var H = document.getElementById("MenuButH");
+  				if (H.style.display === "none") {
+    			H.style.display = "block";
+  				} else {
+    			H.style.display = "none";
+  				}
+			}
+			function AD() {
+				var AD = document.getElementById("MenuButAD");
+  				if (AD.style.display === "none") {
+    			AD.style.display = "block";
+  				} else {
+    			AD.style.display = "none";
+  				}
+			}
+			function W() {
+				var W = document.getElementById("MenuButW");
+  				if (W.style.display === "none") {
+    			W.style.display = "block";
+  				} else {
+    			W.style.display = "none";
+  				}
+			}
+			function ASolar() {
+				if (condition) {
+					
+				} else {
+					
+				}
+			}
+		</script>
+		<div class="container">
+			<img src="./2024 premiers coding challange.png" alt="vmakdwnvakj" width="50%" height="100%" class="right">
+			<button id="ButA" class="btn" onclick="A()">A Block</button>
+			<button id="ButB" class="btn" onclick="B()">B Block</button>
+			<button id="ButC" class="btn" onclick="C()">C Block</button>
+			<button id="ButH" class="btn" onclick="H()">Hall</button>
+			<button id="ButD" class="btn" onclick="D()">D Block</button>
+			<button id="ButAD" class="btn" onclick="AD()">Admin</button>
+			<button id="ButW" class="btn" onclick="W()">river</button>
+			<div id="MenuButA" class="btn" style="display:none" onclick="A()">
+			<button class="box" >Solar</button>
+			<button class="box">Vertical Garden</button>
+			</div>
+			<div id="MenuButB" class="btn" style="display:none" onclick="B()">
+			<button class="box">Solar</button>
+			<button class="box">Vertical Garden</button>
+			</div>
+			<div id="MenuButC" class="btn" style="display:none" onclick="C()">
+			<button class="box">Solar</button>
+			<button class="box">Vertical Garden</button>
+			</div>
+			<div id="MenuButH" class="btn" style="display:none" onclick="H()">
+			<button class="box">Solar</button>
+			<button class="box">Vertical Garden</button>
+			</div>
+			<div id="MenuButD" class="btn" style="display:none" onclick="D()">
+			<button class="box">Solar</button>
+			<button class="box">Vertical Garden</button>
+			</div>
+			<div id="MenuButAD" class="btn" style="display:none" onclick="AD()">
+			<button class="box">Solar</button>
+			<button class="box">Vertical Garden</button>
+			</div>
+			<div id="MenuButW" class="btn" style="display:none" onclick="W()">
+			<button class="box">Hydro</button>
+			</div>
+		</div>
+	</body>
+</html>
