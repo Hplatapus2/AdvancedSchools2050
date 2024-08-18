@@ -19,6 +19,7 @@
 			.right {
 				position: absolute;
 				right: 0px;
+				top: 0px;
 			}
 		/*	.container {
 				position: relative;
@@ -108,6 +109,11 @@
 	left: 74.73118279569892%;
 	top: 97.30458221024259%;
   }
+  .back {
+	height: 5%;
+	width: 50%;
+	padding-left: 16px;
+  }
 		</style>
 		
 	</head>
@@ -124,11 +130,12 @@
 			import * as THREE from 'three';
 			import { APP } from './js/app.js';
 			import { OrbitControls } from './js/OrbitControls.js';
+			
 
 			window.THREE = THREE; // Used by APP Scripts.
 			window.OrbitControls = OrbitControls;
 			//var controls = new OrbitControls( camera, renderer.domElement );
-
+			var SolarA = false
 			var loader = new THREE.FileLoader();
 			loader.load( 'app.json', function ( text ) {
 
@@ -149,6 +156,7 @@
 			} );
 		</script>
 		<script>
+				var SolarA = false
 				function A() {
 				var A = document.getElementById("MenuButA");
   				if (A.style.display === "none") {
@@ -205,7 +213,17 @@
     			W.style.display = "none";
   				}
 			}
+			function solarA() {
+				if (SolarA == false) {
+					console.log(SolarA)
+					var SolarA = true
+				} else {
+					console.log(SolarA)
+					var SolarA = false
+				}
+			}
 		</script>
+			<a href="https://advancedschools2050.w3spaces.com/"><h1 class="back">back 🔙</h1></a>		
 		<div class="container">
 			<img src="./2024 premiers coding challange.png" alt="vmakdwnvakj" width="50%" height="100%" class="right">
 			<button id="ButA" class="btn" onclick="A()">A Block</button>
@@ -216,7 +234,7 @@
 			<button id="ButAD" class="btn" onclick="AD()">Admin</button>
 			<button id="ButW" class="btn" onclick="W()">river</button>
 			<div id="MenuButA" class="btn" style="display:none" onclick="A()">
-			<button class="box" >Solar</button>
+			<button class="box" onclick="solarA()">Solar</button>
 			<button class="box">Vertical Garden</button>
 			</div>
 			<div id="MenuButB" class="btn" style="display:none" onclick="B()">
