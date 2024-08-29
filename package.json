@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "three": "^0.165.0"
+    "canvas": "^2.11.2",
+    "three": "^0.165.0",
+    "vblob": "^1.1.0"
   },
   "devDependencies": {
     "sass": "^1.77.8",

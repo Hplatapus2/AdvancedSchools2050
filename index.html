@@ -6,6 +6,7 @@
 		<meta name="generator" content="Three.js Editor">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="stylesheet" href="budtpos.css">
+		<script src="https://kit.fontawesome.com/7717deab00.js" crossorigin="anonymous"></script>
 		<style>
 			body {
 				font-family: sans-serif;
@@ -89,6 +90,14 @@
 	left: 75.33602150537634%;
 	top: 6.334231805929919%;
   }
+  #MenuButT {
+	left: 15.33602150537634%;
+	top: 6.334231805929919%;
+  }
+  #ButT {
+	left: 15.33602150537634%;
+	top: 6.334231805929919%;
+  }
   #MenuButD {
 	left: 75.33602150537634%;
 	top: 6.334231805929919%;
@@ -100,6 +109,14 @@
   #MenuButAD {
 	left: 88.5752688172043%;
 	top: 85.71428571428571%;
+  }
+  #ButO {
+	left: 88.5752688172043%;
+	top: 50%;
+  }
+  #MenuButO {
+	left: 88.5752688172043%;
+	top: 50%;
   }
   #ButW {
 	left: 74.73118279569892%;
@@ -125,19 +142,24 @@
 				}
 			}
 		</script>
-		<script type="module">
+		<!--<script type="module">
 			
 			import * as THREE from 'three';
 			import { APP } from './js/app.js';
 			import { OrbitControls } from './js/OrbitControls.js';
+			import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 			
 
 			window.THREE = THREE; // Used by APP Scripts.
 			window.OrbitControls = OrbitControls;
 			//var controls = new OrbitControls( camera, renderer.domElement );
 			var SolarA = false
-			var loader = new THREE.FileLoader();
-			loader.load( 'app.json', function ( text ) {
+			var loader = new GLTFLoader();
+			loader.load( 'scene.gltf', function ( gltf ) {
+				
+				const model = gltf.scene;
+
+				scene.add( model );
 
 				var width = window.innerWidth / 2
 				var player = new APP.Player();
@@ -154,7 +176,11 @@
 				} );
 
 			} );
-		</script>
+		</script>-->
+		<script type="module" src="scripts.js">
+		</script>    <div>
+      <canvas id="myThreeJsCanvas" />
+    </div>
 		<script>
 				var SolarA = false
 				function A() {
@@ -213,14 +239,16 @@
     			W.style.display = "none";
   				}
 			}
+			function O() {
+				var O = document.getElementById("MenuButO");
+  				if (O.style.display === "none") {
+    			O.style.display = "block";
+  				} else {
+    			O.style.display = "none";
+  				}
+			}
 			function solarA() {
-				if (SolarA == false) {
-					console.log(SolarA)
-					var SolarA = true
-				} else {
-					console.log(SolarA)
-					var SolarA = false
-				}
+
 			}
 		</script>
 			<a href="https://advancedschools2050.w3spaces.com/"><h1 class="back">back 🔙</h1></a>		
@@ -233,6 +261,7 @@
 			<button id="ButD" class="btn" onclick="D()">D Block</button>
 			<button id="ButAD" class="btn" onclick="AD()">Admin</button>
 			<button id="ButW" class="btn" onclick="W()">river</button>
+			<button id="ButO" class="btn" onclick="O()">Oval</button>
 			<div id="MenuButA" class="btn" style="display:none" onclick="A()">
 			<button class="box" onclick="solarA()">Solar</button>
 			<button class="box">Vertical Garden</button>
@@ -252,6 +281,7 @@
 			<div id="MenuButD" class="btn" style="display:none" onclick="D()">
 			<button class="box">Solar</button>
 			<button class="box">Vertical Garden</button>
+			<button class="box">Water Tank</button>
 			</div>
 			<div id="MenuButAD" class="btn" style="display:none" onclick="AD()">
 			<button class="box">Solar</button>
@@ -260,6 +290,9 @@
 			<div id="MenuButW" class="btn" style="display:none" onclick="W()">
 			<button class="box">Hydro</button>
 			</div>
+			<div id="MenuButO" class="btn" style="display:none" onclick="O()">
+				<button class="box">Solar lights</button>
+				</div>
 		</div>
 	</body>
 </html>
