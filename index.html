@@ -142,7 +142,7 @@
 				}
 			}
 		</script>
-		<!--<script type="module">
+		<script type="module">
 			
 			import * as THREE from 'three';
 			import { APP } from './js/app.js';
@@ -154,8 +154,8 @@
 			window.OrbitControls = OrbitControls;
 			//var controls = new OrbitControls( camera, renderer.domElement );
 			var SolarA = false
-			var loader = new GLTFLoader();
-			loader.load( 'scene.gltf', function ( gltf ) {
+			var loader = new THREE.ObjectLoader();
+			loader.load( 'app.json', function ( scene ) {
 				
 				const model = gltf.scene;
 
@@ -176,10 +176,10 @@
 				} );
 
 			} );
-		</script>-->
-		<script type="module" src="scripts.js">
+		</script>
+		<!--<script type="module" src="scripts.js">-->
 		</script>    <div>
-      <canvas id="myThreeJsCanvas" />
+  	<canvas id="c"></canvas>
     </div>
 		<script>
 				var SolarA = false
